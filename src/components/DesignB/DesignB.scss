@@ -1,0 +1,44 @@
+@import "./../Design/Design.scss";
+
+
+.container {
+    @extend .conatiner;
+    flex-direction: row-reverse;
+
+    .text-section {
+        margin-inline-end: $padding;
+        margin-inline-start: unset !important;
+    }
+
+    @include mobile {
+
+        .text-section {
+            margin-inline: 1.5em !important;
+        }
+        .image-sect img{
+            width: clamp(310px, 100%, 440px);
+            transform: scale(1.2);
+            
+        }
+    }
+  
+}
+
+
+// ### SCALE IMAGE AND POSITION
+@media screen and (min-width: 450px) {
+    .image-sect {
+        position: relative;
+        flex: 2;
+        
+        left: -13%;
+        right: unset;
+
+        max-width: 50rem;
+
+        img {
+            transform: scale(1.25);
+            width: 100%;
+        }
+    }
+}

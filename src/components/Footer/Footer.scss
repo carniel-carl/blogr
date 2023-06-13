@@ -1,0 +1,51 @@
+@import "./../../config";
+
+
+.footer {
+    background-color: $bg_ft_dark-blk-blue;
+    border-top-right-radius: $radius;
+    padding-block: $padding - 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    text-align: center;
+
+    p {
+        color: $white_text;
+        font-weight: getFontWeight(w6);
+        font-size: 1.2em;
+    }
+
+    .logo {
+        margin-bottom: 1.8em;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        ul li {
+
+            margin-bottom: .8em;
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    }
+
+    @include desktop {
+        flex-direction: row;
+        // justify-content: space-between;
+        column-gap: 12rem;
+        padding-inline: $padding;
+        align-items: flex-start;
+        padding-block: 5rem;
+        margin-top: 12rem;
+    }
+}

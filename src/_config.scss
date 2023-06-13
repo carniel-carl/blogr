@@ -1,0 +1,96 @@
+// ### Primary
+
+$light-red__cta-text :hsl(356, 100%, 66%);
+$v-light-red_cta-hover_bg :hsl(355, 100%, 74%);
+$v-dark-blue_heading:hsl(208, 49%, 24%);
+
+// ### Neutral
+
+$white_text:hsl(0, 0%, 100%);
+$gray-blue_ft-txt: hsl(240, 2%, 79%);
+$dk-gray-blue_body_copy: hsl(207, 13%, 34%);
+$bg_ft_dark-blk-blue: hsl(240, 10%, 16%);
+
+// ### Gradient
+
+// Background gradient - Intro/CTA mobile nav
+
+$grad1_red-lgt: hsl(13, 100%, 72%);
+$grad2_red: hsl(353, 100%, 62%);
+
+// Background gradient - body:
+
+$grad1_blue-dk: hsl(237, 17%, 21%);
+$grad2_blue: hsl(237, 23%, 32%);
+
+// #Screensize 
+
+$mobile: 450px;
+
+
+//  ### fonts
+$fontoverpass : 'Overpass', sans-serif;
+$fontubuntu : 'Ubuntu', sans-serif;
+
+// ### utilities
+
+$weights : (
+    "w3": 300,
+    "w4": 400,
+    "w5": 500,
+    "w6": 600,
+    "w7": 700,
+);
+
+$padding : 10rem;
+$radius : 6rem;
+
+
+// mixins || functions
+
+@function getFontWeight ($weight) {
+    @return map-get($weights , $weight)
+};
+
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content
+        
+    }
+};
+@mixin desktop {
+    @media screen and (min-width: $mobile) {
+        @content
+        
+    }
+};
+
+
+// ### resets
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-family: $fontoverpass;
+    
+}
+
+h4 {
+    font-family: $fontubuntu;
+    color: $v-dark-blue_heading;
+    font-weight: getFontWeight(w6);
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: $white_text;
+}
+
+li {
+    list-style-type: none;
+}
