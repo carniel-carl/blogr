@@ -4,10 +4,10 @@ header {
     background: url(./../../images/bg-pattern-intro-desktop.svg) no-repeat 25% 52%,linear-gradient(to right, $grad1_red-lgt, 18%, $grad2_red);
     background-size: 220%;
     background-repeat: no-repeat;
-    min-height: 80vh;
+    min-height: 75vh;
     border-bottom-left-radius: $radius;
     padding-inline: $padding;
-    padding-block: 2rem;
+    padding-block: 3rem;
 
     display: flex;
     flex-direction: column;
