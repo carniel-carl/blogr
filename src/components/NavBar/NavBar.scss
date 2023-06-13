@@ -45,7 +45,8 @@ header {
 
         .show-sidebar nav {
             transform: translateX(0);
-            // display: inline-flex;
+            z-index: 5;
+        
         }
     
     }

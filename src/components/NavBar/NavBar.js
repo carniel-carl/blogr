@@ -11,7 +11,17 @@ const NavBar = () => {
   const [showSideBar, setshowSideBar] = useState(false);
 
   const showBarHandler = () => {
-    setshowSideBar((prev) => !prev);
+    setshowSideBar(true);
+
+    // Disables Background Scrolling whilst the SideDrawer/Modal is open
+    document.body.style.overflowY = "hidden";
+  };
+
+  const closeBarHandler = () => {
+    setshowSideBar(false);
+
+    // Unsets Background Scrolling to use when SideDrawer/Modal is closed
+    document.body.style.overflowY = "unset";
   };
 
   return (
@@ -117,9 +127,15 @@ const NavBar = () => {
           </nav>
         </div>
 
-        <div className="menu-btn" onClick={showBarHandler}>
-          <img src={showSideBar ? closeBtn : menuBtn} alt="menu btn" />
-        </div>
+        {showSideBar ? (
+          <div className="menu-btn" onClick={closeBarHandler}>
+            <img src={closeBtn} alt="close btn" />
+          </div>
+        ) : (
+          <div className="menu-btn" onClick={showBarHandler}>
+            <img src={menuBtn} alt="menu btn" />
+          </div>
+        )}
       </div>
 
       <div className="hero">
